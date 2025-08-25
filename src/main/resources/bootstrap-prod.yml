@@ -1,0 +1,40 @@
+rocketmq:
+  # NameServer
+  name-server: 10.10.10.101:9876
+  # 默认的消息组
+  producer:
+    group: template-group
+    timeout: 4000
+spring:
+  redis:
+    host: 10.10.10.101 # Redis服务器地址
+    database: 0 # Redis数据库索引（默认为0）
+    port: 6379 # Redis服务器连接端口
+    password: mebay_redis00. # Redis服务器连接密码（默认为空）
+    timeout: 8000ms # 连接超时时间（毫秒）
+  datasource:
+    url: jdbc:mysql://10.10.10.101:4408/logistics?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useInformationSchema=false&rewriteBatchedStatements=true
+    username: ENC(37ZMFZWEUniyk9Nj0aYCL3O7WZheEiO6ezpWZMyESEh71raMusCc4v3gF2Gz3lM4)
+    password: ENC(E4sItboIW+EOUoH1n1xthorNZZLDczMPcAsPUhQ+SMyqcAxczSweX5kTs4y263Bo9koVPrCKGBva6XkwhlhR2w==)
+    druid:
+      initial-size: 5 #连接池初始化大小
+      min-idle: 10 #最小空闲连接数
+      max-active: 100 #最大连接数
+      web-stat-filter:
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*" #不统计这些请求数据
+      stat-view-servlet: #访问监控网页的登录用户名和密码
+        login-username: druid
+        login-password: druid
+      keep-alive: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://10.10.10.13:8848
+        namespace: 0e2a6a5b-79f6-4f3b-a705-553da980df1c
+      config:
+        server-addr: http://10.10.10.13:8848
+        file-extension: yaml
+        group: DEFAULT_GROUP
+jasypt:
+  encryptor:
+    password: mebay_pass_new

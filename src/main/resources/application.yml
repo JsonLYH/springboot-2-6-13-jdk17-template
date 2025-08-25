@@ -1,0 +1,15 @@
+server:
+  port: 9778
+spring:
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
