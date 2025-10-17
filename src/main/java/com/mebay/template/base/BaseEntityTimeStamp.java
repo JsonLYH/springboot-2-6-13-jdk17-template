@@ -2,17 +2,14 @@ package com.mebay.template.base;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.mebay.pay.CusSerialize.LocalDateTimeToLongDeserializer;
-import com.mebay.pay.CusSerialize.LongToDateTimeSerializer;
+import com.mebay.template.CusSerialize.LocalDateTimeToLongDeserializer;
+import com.mebay.template.CusSerialize.LongToDateTimeSerializer;
 import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
-import java.util.Date;
 
 @Data
 public class BaseEntityTimeStamp implements Serializable {
